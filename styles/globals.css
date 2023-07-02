@@ -1,27 +1,31 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  body {
+    @apply bg-[#CDF0EA];
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  label {
+    @apply text-[2rem];
+  }
+  input, select {
+    @apply h-9 w-full my-3 rounded-lg border border-black
+  }
+  input:focus {
+    @apply p-3 text-xl;
+  }
+  select {
+    @apply px-3 text-xl;
+  }
+  .button {
+    @apply bg-black h-fit p-2 w-fit text-white text-lg rounded-lg;
+  }
+  .note {
+    @apply text-2xl my-5 font-semibold bg-[#31e1f7] p-4 rounded-3xl;
+  }
+  .card {
+    @apply mx-4 my-6 rounded-lg shadow-xl bg-[#e9ecef] min-h-[18rem];
+  }
 }
