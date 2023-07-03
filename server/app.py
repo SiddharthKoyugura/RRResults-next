@@ -17,6 +17,11 @@ def home():
         "message": "hey_buddy",
     })
 
+@app.route("/singleSem")
+def single_sem():
+    roll_number, sem_code = request.args["rollNumber"], request.args["sem"]
+    return get_single_sem_result(roll_number, sem_code)
+
 # class StudentForm(FlaskForm):
 #     htno = StringField(label="Enter your Roll Number:", validators=[Length(min=10, max=10), DataRequired()])
 #     # code = SelectField(label="Semester:", choices=[("1-1", "1-1"), ("1-2", "1-2"), ("2-1", "2-1"), ("2-2", "2-2"), ("3-1", "3-1"), ("3-2", "3-2"), ("4-1", "4-1"), ("4-2", "4-2")], validators=[DataRequired()])

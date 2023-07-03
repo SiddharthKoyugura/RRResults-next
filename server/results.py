@@ -152,7 +152,17 @@ def get_single_sem_result(roll, sem_code):
     global marks_data, sgpa
     marks_data, sgpa = [], []
     verify_results(roll.upper(), get_sem_codes_list(sem_code))
-    return [marks_data, sgpa]
+    print(personal_data)
+    return {"marks":marks_data, "sgpa":sgpa[-1], "details":personal_data}
+
+# print(get_single_sem_result("20VE1A6689", "1-1"))
+
+
+# def get_single_sem_result(roll, sem_code):
+#     global marks_data, sgpa
+#     marks_data, sgpa = [], []
+#     verify_results(roll.upper(), get_sem_codes_list(sem_code))
+#     return [marks_data, sgpa]
 
 # def get_result(roll, sem_code):
 #     global marks_data, sgpa

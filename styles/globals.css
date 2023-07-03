@@ -18,10 +18,10 @@
     @apply text-[2rem];
   }
   input, select {
-    @apply h-9 w-full my-3 rounded-lg border border-black
+    @apply h-9 w-full my-3 rounded-lg border border-black ;
   }
-  input:focus {
-    @apply p-3 text-xl;
+  input {
+    @apply p-3;
   }
   select {
     @apply px-3 text-xl;
