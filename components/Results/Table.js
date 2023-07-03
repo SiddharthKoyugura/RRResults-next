@@ -117,13 +117,13 @@ const Table = () => {
         </div>
       </div>
       <div className="m-5">
-        <div className="border border-neutral-700 bg-neutral-800 text-neutral-50 font-medium w-fit p-1 mx-auto rounded-lg">
-          <td className="whitespace-nowrap px-6 py-4 font-medium">
-            <h2>SGPA:</h2>
-          </td>
-          <td className="whitespace-nowrap px-6 py-4">
-            <h2>8.39</h2>
-          </td>
+        <div className="border border-neutral-700 bg-neutral-800 text-neutral-50 font-medium w-fit p-1 mx-auto rounded-lg flex flex-row">
+          <h2 className="whitespace-nowrap px-6 py-4 font-medium">
+            SGPA:
+          </h2>
+          <h2 className="whitespace-nowrap px-6 py-4">
+            8.39
+          </h2>
         </div>
       </div>
     </div>

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -5,7 +6,7 @@
 
 @layer base {
   body {
-    @apply bg-[#CDF0EA];
+    @apply bg-[#CDF0EA] font-fira-Sans;
   }
   h1 {
     @apply lg:text-3xl text-xl;

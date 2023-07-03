@@ -1,4 +1,5 @@
 import Details from "@/components/Results/Details";
+import GoBack from "@/components/Results/GoBack";
 import Table from "@/components/Results/Table";
 
 const results = () => {
@@ -6,6 +7,7 @@ const results = () => {
     <div>
         <Details />
         <Table />
+        <GoBack />
     </div>
   )
 }
