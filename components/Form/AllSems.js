@@ -1,6 +1,6 @@
 const AllSems = () => {
   return (
-    <div className="card h-[25rem]">
+    <div className="card h-[26rem]">
       <div className="m-10">
         <div className="flex justify-center  w-full">
           <h1 className="note">Get Single Sem Results with SGPA</h1>
@@ -12,7 +12,7 @@ const AllSems = () => {
             <input type="text" name="rollNumber" id="rollNumber" />
             <label htmlFor="semester">Semester:</label>
             <br />
-            <select class="form-control" id="code" name="code" required>
+            <select className="form-control" id="code" name="code" required>
               <option value="1-1">1-1</option>
               <option value="1-2">1-2</option>
               <option value="2-1">2-1</option>
