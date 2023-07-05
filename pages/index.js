@@ -9,42 +9,10 @@ export default function Home() {
   // Router
   const router = useRouter();
 
-  // Results state
-  // const [ singleSemData, setSingleSemData ] = useState({});
-
-  // useEffect(()=>{
-  //   if(Object.entries(singleSemData).length !==0){
-  //     console.log("sem_data =",singleSemData);
-      
-  //     if(singleSemData.message){
-  //       alert("Invalid credentials");
-  //       router.push("/");
-  //     }
-  //     else{
-  //       // router.push({
-  //       //   pathname: '/results',
-  //       //   query: singleSemData,
-  //       // });
-  //       const encodedData = encodeURIComponent(JSON.stringify(singleSemData));
-  //       router.push(`/results?data=${encodedData}`);
-  //     }
-  //   }
-  // }, [singleSemData, router])
-
   const handleSingleSemForm = async (e) => {
     e.preventDefault();
     const rollNumber = e.target.rollNumber.value;
     const code = e.target.code.value;
-    // try {
-    //   fetch(`http://localhost:3003/singleSem?rollNumber=${rollNumber}&sem=${code}`)
-    //   .then((res)=>res.json())
-    //   .then((data)=>{
-    //     setSingleSemData(data);
-    //     console.log(data, singleSemData);
-    //   })
-    // } catch (err) {
-    //   console.log("Error", err);
-    // }
     router.push(`/results?rollNumber=${rollNumber}&code=${code}`);
   };
 
