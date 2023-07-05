@@ -6,7 +6,7 @@ const SingleSem = ({ submitFunction }) => {
           <h1 className="note">Get Single Sem Results with SGPA</h1>
         </div>
         <div className="form-container">
-          <form onSubmit={submitFunction}>
+          <form onSubmit={submitFunction} method="post">
             <label htmlFor="rollNumber">Enter your Roll Number:</label>
             <br />
             <input type="text" maxLength={10} minLength={10} name="rollNumber" id="rollNumber" required />

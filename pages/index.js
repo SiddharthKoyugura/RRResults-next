@@ -1,35 +1,53 @@
-import AllSems from '@/components/Form/AllSems';
-import SingleSem from '@/components/Form/SingleSem';
-import Head from 'next/head';
-import { useEffect, useState } from 'react'
+import AllSems from "@/components/Form/AllSems";
+import SingleSem from "@/components/Form/SingleSem";
+import Head from "next/head";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+
 
 export default function Home() {
+  // Router
+  const router = useRouter();
+
   // Results state
-  const [ rollNumber, setRollNumber ] = useState("");
-  const [ code, setCode ] = useState("");
   const [ singleSemData, setSingleSemData ] = useState({});
 
   useEffect(()=>{
-    fetch(`http://localhost:3001/singleSem?rollNumber=${rollNumber}&sem=${code}`)
-    .then((res)=>res.json())
-    .then((response)=>{setSingleSemData(response); console.log(singleSemData);})
-    .catch((err)=>console.error("error", err));
-  }, [rollNumber, code]);
+    if(Object.entries(singleSemData).length !==0){
+      console.log("sem_data =",singleSemData);
+      
+      if(singleSemData.message){
+        alert("Invalid credentials");
+        router.push("/");
+      }
+      else{
+        router.push({
+          pathname: '/results',
+          query: singleSemData,
+        });
+      }
+    }
+  }, [singleSemData, router])
 
   const handleSingleSemForm = async (e) => {
     e.preventDefault();
     const rollNumber = e.target.rollNumber.value;
     const code = e.target.code.value;
-    setRollNumber(rollNumber);
-    setCode(code);
-
-    // const response = await fetch(`http://localhost:3001/singleSem?rollNumber=${rollNumber}&sem=${code}`);
-    // const data = await response.json();
-  }
+    try {
+      fetch(`http://localhost:3003/singleSem?rollNumber=${rollNumber}&sem=${code}`)
+      .then((res)=>res.json())
+      .then((data)=>{
+        setSingleSemData(data);
+        console.log(data, singleSemData);
+      })
+    } catch (err) {
+      console.log("Error", err);
+    }
+  };
 
   const handleAllSemsForm = (e) => {
     e.preventDefault();
-  }
+  };
 
   return (
     <div>
@@ -41,5 +59,5 @@ export default function Home() {
       <h1 className="note w-fit mx-auto">(OR)</h1>
       <SingleSem submitFunction={handleSingleSemForm} />
     </div>
-  )
+  );
 }

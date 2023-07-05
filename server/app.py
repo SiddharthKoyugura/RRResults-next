@@ -20,7 +20,10 @@ def home():
 @app.route("/singleSem")
 def single_sem():
     roll_number, sem_code = request.args["rollNumber"], request.args["sem"]
-    return get_single_sem_result(roll_number, sem_code)
+    try:
+        return get_single_sem_result(roll_number, sem_code)
+    except:
+        return jsonify({ "message": "error" })
 
 # class StudentForm(FlaskForm):
 #     htno = StringField(label="Enter your Roll Number:", validators=[Length(min=10, max=10), DataRequired()])
@@ -83,4 +86,4 @@ def single_sem():
 
 
 if __name__ == "__main__":
-    app.run(host="localhost", port=3001, debug=True)
+    app.run(host="localhost", port=3003, debug=True)
