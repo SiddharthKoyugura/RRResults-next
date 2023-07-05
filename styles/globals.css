@@ -6,7 +6,7 @@
 
 @layer base {
   body {
-    @apply bg-[#CDF0EA] font-fira-Sans;
+    @apply bg-[#CDF0EA] font-fira-Sans overflow-x-hidden;
   }
   h1 {
     @apply lg:text-3xl text-xl;
