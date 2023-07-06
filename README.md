@@ -8,14 +8,14 @@ Here's the link to RRResults repo: https://github.com/SiddharthKoyugura/RRResult
 ## To run this project on local server
 
 ### Frontend(Nextjs)
-'''
+```
   npm i
   npm run dev
-'''
+```
 
 ### Backend server(flask)
-'''
+```
   cd server
   pip install -r requirements.txt
   python app.py
-'''
+```
