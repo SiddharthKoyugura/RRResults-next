@@ -19,3 +19,15 @@ Here's the link to RRResults repo: https://github.com/SiddharthKoyugura/RRResult
   pip install -r requirements.txt
   python app.py
 ```
+
+## Demo
+
+### Home Page
+<kbd>
+<img src="https://github.com/SiddharthKoyugura/RRResults-next/assets/93535758/ead340fa-a994-4791-9ebf-19958eb18e87" />
+</kbd>
+
+### Results Page
+<kbd>
+<img src="https://github.com/SiddharthKoyugura/RRResults-next/assets/93535758/94d0bdfc-74e4-4bb5-8b88-5ed4cad87aaa" />
+</kbd>
