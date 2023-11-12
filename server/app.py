@@ -1,6 +1,5 @@
 from flask import *
 from flask_bootstrap import Bootstrap
-from flask_wtf import FlaskForm
 from wtforms import *
 from wtforms.validators import *
 from results import *

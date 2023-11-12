@@ -21,7 +21,6 @@ const Results = () => {
         router.push("/");
       }
     } else {
-      try {
         fetch(
           `http://localhost:3003/singleSem?rollNumber=${rollNumber}&sem=${code}`
         )
@@ -29,16 +28,16 @@ const Results = () => {
           .then((data) => {
             setSingleSemData(data);
             console.log(data, singleSemData);
+          })
+          .catch((err)=>{
+            console.log("Error", err);
           });
-      } catch (err) {
-        console.log("Error", err);
       }
-    }
   }, [singleSemData, router, rollNumber, code]);
 
   return (
     <div>
-      {(Object.entries(singleSemData).length !== 0 && !singleSemData.message) ? (
+      {code && (Object.entries(singleSemData).length !== 0 && !singleSemData.message) ? (
         <>
           <Details data={singleSemData.details} />
           <Table marks={singleSemData.marks} semCode={code} sgpa={singleSemData.sgpa} />

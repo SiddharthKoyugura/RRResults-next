@@ -3,8 +3,6 @@ import SingleSem from "@/components/Form/SingleSem";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-
-
 export default function Home() {
   // Router
   const router = useRouter();
@@ -18,6 +16,8 @@ export default function Home() {
 
   const handleAllSemsForm = (e) => {
     e.preventDefault();
+    const rollNumber = e.target.rollNumber.value;
+    router.push(`/results?rollNumber=${rollNumber}`);
   };
 
   return (
